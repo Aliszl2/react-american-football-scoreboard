@@ -32,8 +32,17 @@ function App() {
           </div>
           <div className="timer">00:03</div>
           <div className="away">
-            <h2 className="away__name">{awayName}</h2>
-            <div className="away__score">{awayScore}</div>
+            <h2 className="away__name"
+            onDoubleClick={()=>{
+              setAwayScore(awayScore-1);
+            }}
+            >{awayName}</h2>
+            <div className="away__score"
+            onClick={()=>{
+              setAwayScore(awayScore+1);
+            }}
+            
+            >{awayScore}</div>
           </div>
         </div>
         <BottomRow />
