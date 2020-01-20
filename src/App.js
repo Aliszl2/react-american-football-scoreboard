@@ -1,5 +1,5 @@
 //TODO: STEP 1 - Import the useState hook.
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import BottomRow from "./BottomRow";
 
@@ -9,8 +9,9 @@ function App() {
   const [awayScore, setAwayScore] = useState(0);
   const [homeName, setHomeName] = useState("Lions");
   const [awayName, setAwayName] = useState("Tigers");
+  
 
-  const handleOnChange=event=>{}
+  
 
   const handleSubmitHome=event=>{
     event.preventDefault();
@@ -30,10 +31,10 @@ function App() {
 
             <div className="home__score">{homeScore}</div>
           </div>
-          <div className="timer">00:03</div>
+          <div className="timer">12:20</div>
           <div className="away">
             <h2 className="away__name"
-            onDoubleClick={()=>{
+            ondblclick={()=>{
               setAwayScore(awayScore-1);
             }}
             >{awayName}</h2>

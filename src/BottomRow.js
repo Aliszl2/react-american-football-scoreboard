@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import "./App.css";
 
 
@@ -7,7 +7,9 @@ const BottomRow = () => {
   const[quarter,setQuarter]=useState(0);
   const[toGo,setToGo]=useState(10);
   const[down,setDown]=useState(0);
+  const[ballOn,setBallOn]=useState(0);
 
+  
   return (
     <div className="bottomRow">
       <div className="down">
@@ -37,7 +39,13 @@ const BottomRow = () => {
       </div>
       <div className="ballOn">
         <h3 className="ballOn__title">Ball on</h3>
-        <div className="ballOn__value">21</div>
+        <div className="ballOn__value"
+        onClick={()=>{
+          if(ballOn < 100 ){
+            setBallOn(ballOn + 1)
+          }else{setBallOn(0)}
+        }}
+        >{ballOn}</div>
       </div>
       <div className="quarter">
         <h3 className="quarter__title">Quarter</h3>
